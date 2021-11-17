@@ -13,7 +13,7 @@ auto main(int, char *argv[]) -> int {
   while (a != argv[1]) {
     a = get_password("Złe hasło! Podaj hasło: ");
   }
-  if (a==argv[1]) {a = get_password( "Brawo! Brawo!");}
+ std::cout << "Brawo! Brawo!\n";
   
   return 0;
 }
