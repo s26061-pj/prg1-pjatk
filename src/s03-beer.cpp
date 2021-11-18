@@ -1,13 +1,25 @@
 #include <iostream>
 #include <string>
 
-auto main() -> int 
-{
-  for (auto i = 99; i > 0; --i) {
-    std::cout << i << " bottles of beer on the wall, " << i << "bottles of beer." << "\n" << "Take one down, pass it around, " << i - 1 << " bottles of beer on the wall...\n";
-  }
+auto number_of_bottles(std::string prompt) -> int {
+  auto bottle = std::string{};
+  std::cout << prompt;
+  std::getline(std::cin, bottle);
+  return std::stoi(bottle);
+}
 
-   std::cout << "No more bottles of beer on the wall, no more bottles of beer." << "\n" << "Go to the store and buy some more, 99 bottles of beer on the wall...\n";
+auto main() -> int {
+  auto n = number_of_bottles("Ile masz flaszek:");
+  while (n > 0) {
+    std::cout << n << " bottles of beer on the wall, ";
+    std::cout << n << " bottles of beer.\n";
+    std::cout << "Take one down, pass it around, ";
+    std::cout << --n << " bottles of beer on the wall...\n";
+  }
+  std::cout << "No more bottles of beer on the wall,";
+  std::cout << "no more bottles of beer.";
+  std::cout << "Go to the store and buy some more, ";
+  std::cout << n << " bottles of beer on the wall...\n";
 
   return 0;
 }
