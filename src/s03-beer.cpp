@@ -6,11 +6,16 @@ auto main(int argc, char *argv[]) -> int {
   if (argc > 1) {
     bottles = std::stoi(argv[1]);
   }
+  if (bottles < 0) {
+    std::cout
+        << "I know you have some bottles left, mate! Don't play with me!\n";
+    return 1;
+  }
   for (auto n = bottles; n > 0; --n) {
-    std::cout << bottles << " bottles of beer on the wall, ";
-    std::cout << bottles << " bottles of beer.\n";
+    std::cout << n << " bottles of beer on the wall, ";
+    std::cout << n << " bottles of beer.\n";
     std::cout << "Take one down, pass it around, ";
-    std::cout << --bottles << " bottles of beer on the wall...\n";
+    std::cout << n - 1 << " bottles of beer on the wall...\n";
   }
   std::cout << "No more bottles of beer on the wall,";
   std::cout << "no more bottles of beer.";
