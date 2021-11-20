@@ -11,6 +11,10 @@ auto main(int argc, char *argv[]) -> int {
         << "I know you have some bottles left, mate! Don't play with me!\n";
     return 1;
   }
+  if (bottles == 0) {
+    std::cout << "Don't fool me!\n"
+              << "But, ok, let's sing!\n";
+  }
   for (auto n = bottles; n > 0; --n) {
     std::cout << n << " bottles of beer on the wall, ";
     std::cout << n << " bottles of beer.\n";
